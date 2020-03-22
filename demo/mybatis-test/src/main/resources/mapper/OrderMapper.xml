@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bucheng.demo.mapper.OrderMapper">
+    <insert id="save" parameterType="order">
+        insert into t_order(id,order_id,detail) value(#{id},#{orderId},#{detail})
+    </insert> <!-- 注意，因为这边没有用到mapper接口，所以这里的namespace不需要是完全的类名 -->
+
+    <select id="listAll" resultType="order">
+        SELECT id,order_id as orderId,detail FROM t_order
+    </select>
+    <select id="findById" resultType="cn.bucheng.demo.domain.Order">
+        select id,order_id as orderId,detail FROM t_order where id #{id}
+    </select>
+
+
+</mapper>
