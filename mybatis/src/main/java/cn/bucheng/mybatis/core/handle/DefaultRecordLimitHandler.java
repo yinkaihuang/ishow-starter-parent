@@ -38,7 +38,6 @@ public class DefaultRecordLimitHandler {
         if (context == null || context.getResultCount() <= defaultSize) {
             return;
         }
-        int reallySize = context.getResultCount();
-        throw new ToManyRecordException("当前查询出来记录数 为：" + reallySize + " 大于默认配置数量：" + defaultSize);
+        throw new ToManyRecordException("当前查询出来记录数大于默认配置数量：" + defaultSize+" 条记录");
     }
 }
