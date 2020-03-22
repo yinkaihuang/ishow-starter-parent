@@ -1,0 +1,285 @@
+WARN|2019-12-15 13:44:04.339|[main]|o.s.c.s.AbstractApplicationContext.refresh. 557|Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'druidServlet' defined in class path resource [cn/ishow/jdbc/configuration/DruidConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'druidServlet' threw exception; nested exception is java.lang.NoClassDefFoundError: javax/servlet/http/HttpServlet
+ERROR|2019-12-15 13:44:04.423|[main]|o.s.b.SpringApplication.reportFailure. 858|Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'druidServlet' defined in class path resource [cn/ishow/jdbc/configuration/DruidConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'druidServlet' threw exception; nested exception is java.lang.NoClassDefFoundError: javax/servlet/http/HttpServlet
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:67) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at cn.ishow.gateway.GatewayApplication.main(GatewayApplication.java:33) [classes/:?]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'druidServlet' threw exception; nested exception is java.lang.NoClassDefFoundError: javax/servlet/http/HttpServlet
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 19 more
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/http/HttpServlet
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[?:1.8.0_151]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) ~[?:1.8.0_151]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[?:1.8.0_151]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) ~[?:1.8.0_151]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_151]
+	at cn.ishow.jdbc.configuration.DruidConfiguration.druidServlet(DruidConfiguration.java:39) ~[classes/:?]
+	at cn.ishow.jdbc.configuration.DruidConfiguration$$EnhancerBySpringCGLIB$$8b7298b6.CGLIB$druidServlet$0(<generated>) ~[classes/:?]
+	at cn.ishow.jdbc.configuration.DruidConfiguration$$EnhancerBySpringCGLIB$$8b7298b6$$FastClassBySpringCGLIB$$4d03e57d.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at cn.ishow.jdbc.configuration.DruidConfiguration$$EnhancerBySpringCGLIB$$8b7298b6.druidServlet(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_151]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 19 more
+Caused by: java.lang.ClassNotFoundException: javax.servlet.http.HttpServlet
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[?:1.8.0_151]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) ~[?:1.8.0_151]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[?:1.8.0_151]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) ~[?:1.8.0_151]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) ~[?:1.8.0_151]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_151]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_151]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[?:1.8.0_151]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_151]
+	at cn.ishow.jdbc.configuration.DruidConfiguration.druidServlet(DruidConfiguration.java:39) ~[classes/:?]
+	at cn.ishow.jdbc.configuration.DruidConfiguration$$EnhancerBySpringCGLIB$$8b7298b6.CGLIB$druidServlet$0(<generated>) ~[classes/:?]
+	at cn.ishow.jdbc.configuration.DruidConfiguration$$EnhancerBySpringCGLIB$$8b7298b6$$FastClassBySpringCGLIB$$4d03e57d.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at cn.ishow.jdbc.configuration.DruidConfiguration$$EnhancerBySpringCGLIB$$8b7298b6.druidServlet(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_151]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 19 more
+ERROR|2019-12-15 14:03:33.900|[reactor-http-nio-2]|c.i.g.e.GlobalExceptionHandler.handle. 103|[全局异常处理]异常请求路径:/favicon.ico,记录异常信息:404 NOT_FOUND
+ERROR|2019-12-15 14:03:33.921|[reactor-http-nio-2]|o.s.w.s.a.HttpWebHandlerAdapter.handleUnresolvedError. 281|[3428dd94] 500 Server Error for HTTP GET "/favicon.ico"
+java.lang.NullPointerException: null
+	at cn.ishow.gateway.exception.GlobalExceptionHandler.renderErrorResponse(GlobalExceptionHandler.java:126) ~[classes/:?]
+	at cn.ishow.gateway.exception.GlobalExceptionHandler.lambda$handle$0(GlobalExceptionHandler.java:112) ~[classes/:?]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:118) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2070) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1878) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1752) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3710) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:97) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onError(MonoFlatMap.java:165) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:185) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:251) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$MonoSubscriber.onError(Operators.java:1550) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreInner.onError(MonoIgnoreThen.java:235) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onError(MonoFlatMap.java:165) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onError(Operators.java:1747) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators.error(Operators.java:181) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:52) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3710) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:174) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:96) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:360) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:212) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap.subscribe(FluxConcatMap.java:121) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoNext.subscribe(MonoNext.java:40) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3710) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.innerNext(FluxConcatMap.java:275) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:849) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2070) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1878) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1752) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoMapFuseable.subscribe(MonoMapFuseable.java:59) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3710) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:442) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:212) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.FluxConcatMap.subscribe(FluxConcatMap.java:121) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoNext.subscribe(MonoNext.java:40) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoPeekTerminal.subscribe(MonoPeekTerminal.java:61) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3710) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoPeekFuseable.subscribe(MonoPeekFuseable.java:70) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.core.publisher.MonoPeekTerminal.subscribe(MonoPeekTerminal.java:61) [reactor-core-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at reactor.netty.http.server.HttpServerHandle.onStateChange(HttpServerHandle.java:64) [reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at reactor.netty.tcp.TcpServerBind$ChildObserver.onStateChange(TcpServerBind.java:234) [reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:436) [reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141) [reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:345) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:337) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:162) [reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:345) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:337) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:323) [netty-codec-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:297) [netty-codec-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:345) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:337) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1408) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:345) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:930) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:677) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:612) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:529) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:491) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+ERROR|2019-12-15 14:05:39.914|[reactor-http-nio-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/favicon.ico,记录异常信息:404 NOT_FOUND
+ERROR|2019-12-15 14:06:55.861|[reactor-http-nio-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/favicon.ico,记录异常信息:404 NOT_FOUND
+ERROR|2019-12-15 14:21:01.642|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 14:21:28.005|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 14:21:39.626|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 14:29:27.354|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 14:30:39.271|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 14:33:09.572|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 14:35:02.237|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 18:14:20.498|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 18:14:20.540|[reactor-http-nio-1]|o.s.w.s.a.HttpWebHandlerAdapter.handleUnresolvedError. 286|[999950b9] Error [java.io.IOException: 你的主机中的软件中止了一个已建立的连接。] for HTTP GET "/server_a/server/hello", but ServerHttpResponse already committed (500 INTERNAL_SERVER_ERROR)
+ERROR|2019-12-15 18:14:22.762|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-15 18:14:41.043|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/server_a/server/hello,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:10.068|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/714/m0j0zv3k/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:12.134|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/714/kiayi5n0/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:19.827|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/714/0qj1zlhh/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:26.094|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/811/kya21iyf/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:26.774|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/811/qzvqsszt/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:29.508|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/811/hsx2stvc/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:40.041|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/792/cxb0xyv2/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:40.719|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/792/zglaaudn/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:33:43.446|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/792/2lxt4iyb/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:34:04.539|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/129/kpfgarle/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:34:05.233|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/129/a5t2kqf5/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:34:08.018|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/129/urnekzkt/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:35:25.487|[reactor-http-nio-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/info,记录异常信息:400 BAD_REQUEST "Invalid 'Upgrade' header: [Host:"localhost:8093", Connection:"keep-alive", Sec-Fetch-Mode:"cors", Origin:"http://127.0.0.1:8802", User-Agent:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36", Accept:"*/*", Sec-Fetch-Site:"cross-site", Referer:"http://127.0.0.1:8802/", Accept-Encoding:"gzip, deflate, br", Accept-Language:"zh-CN,zh;q=0.9,en;q=0.8", Cookie:"_ga=GA1.1.590140672.1532589104; SESSION=c5f23f96-0f61-4a1b-9cd2-7e2cb3c60242"]"
+ERROR|2019-12-19 13:36:33.619|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/131/x0slzwr0/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:36:35.696|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/131/etkoaxle/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:36:40.456|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/131/ljfo4cmz/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:36:40.461|[reactor-http-nio-2]|o.s.w.s.a.HttpWebHandlerAdapter.handleUnresolvedError. 286|[a3060a5b] Error [java.io.IOException: 你的主机中的软件中止了一个已建立的连接。] for HTTP POST "/websocket/websocket/131/ljfo4cmz/xhr?t=1576733798445", but ServerHttpResponse already committed (500 INTERNAL_SERVER_ERROR)
+ERROR|2019-12-19 13:36:46.973|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/515/52n1sh1s/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:36:47.666|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/515/vq12sv2m/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:36:50.450|[parallel-2]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/515/koacyd4b/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:39:45.452|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/053/etr5hjx2/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:39:46.163|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/053/omyp4aqt/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:39:49.019|[parallel-3]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/053/idppmbl2/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:40:20.784|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/109/a4rfb1lc/xhr_streaming,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:40:21.749|[parallel-1]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/109/lbyu3e1s/eventsource,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+ERROR|2019-12-19 13:40:25.630|[parallel-4]|c.i.g.e.GlobalExceptionHandler.handle. 109|[全局异常处理]异常请求路径:/websocket/websocket/109/2lybllyj/xhr,记录异常信息:Did not observe any item or terminal signal within 2000ms in 'source(MonoDefer)' (and no fallback has been configured)
+WARN|2019-12-19 16:16:51.605|[main]|c.c.f.a.i.AbstractConfigRepository.trySync.  26|Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:16:55.624|[main]|c.c.f.a.i.LocalFileConfigRepository.trySyncFromUpstream. 167|Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:16:59.641|[Apollo-RemoteConfigLongPollService-1]|c.c.f.a.i.RemoteConfigLongPollService.doLongPollingRefresh. 193|Long polling failed, will retry in 1 seconds. appId: hello, cluster: default, namespaces: application, long polling url: null, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:17:03.641|[main]|c.c.f.a.i.LocalFileConfigRepository.trySyncFromUpstream. 167|Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:17:04.334|[main]|o.s.b.c.p.PropertySourcesDeducer.getSinglePropertySourcesPlaceholderConfigurer.  75|Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment
+WARN|2019-12-19 16:41:01.044|[main]|c.c.f.a.i.AbstractConfigRepository.trySync.  26|Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:41:05.055|[main]|c.c.f.a.i.LocalFileConfigRepository.trySyncFromUpstream. 167|Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:41:09.070|[Apollo-RemoteConfigLongPollService-1]|c.c.f.a.i.RemoteConfigLongPollService.doLongPollingRefresh. 193|Long polling failed, will retry in 1 seconds. appId: hello, cluster: default, namespaces: application, long polling url: null, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: Connection refused: connect]]
+WARN|2019-12-19 16:41:13.081|[main]|c.c.f.a.i.LocalFileConfigRepository.trySyncFromUpstream. 167|Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:41:13.642|[main]|o.s.b.c.p.PropertySourcesDeducer.getSinglePropertySourcesPlaceholderConfigurer.  75|Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment
+ERROR|2019-12-19 16:41:56.926|[http-nio-9091-exec-2]|c.i.w.h.GlobalExceptionHandler.handleError.  59|NoHandlerFoundException detail:org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /hello/
+ERROR|2019-12-19 16:41:59.156|[http-nio-9091-exec-4]|c.i.w.h.GlobalExceptionHandler.handleError.  59|NoHandlerFoundException detail:org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /hello/
+ERROR|2019-12-19 16:42:12.761|[http-nio-9091-exec-6]|c.i.w.h.GlobalExceptionHandler.handleError.  69| detail:java.lang.ClassCastException: cn.ishow.common.model.vo.ResultVO cannot be cast to java.lang.String
+WARN|2019-12-19 16:43:53.529|[main]|c.c.f.a.i.AbstractConfigRepository.trySync.  26|Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:43:57.548|[main]|c.c.f.a.i.LocalFileConfigRepository.trySyncFromUpstream. 167|Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: Connection refused: connect]]
+WARN|2019-12-19 16:44:01.553|[Apollo-RemoteConfigLongPollService-1]|c.c.f.a.i.RemoteConfigLongPollService.doLongPollingRefresh. 193|Long polling failed, will retry in 1 seconds. appId: hello, cluster: default, namespaces: application, long polling url: null, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:44:05.552|[main]|c.c.f.a.i.LocalFileConfigRepository.trySyncFromUpstream. 167|Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://localhost:8080/services/config?appId=hello&ip=192.168.40.2 [Cause: Could not complete get operation [Cause: connect timed out]]
+WARN|2019-12-19 16:44:06.095|[main]|o.s.b.c.p.PropertySourcesDeducer.getSinglePropertySourcesPlaceholderConfigurer.  75|Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment
+WARN|2019-12-19 17:04:31.050|[main]|o.s.c.s.AbstractApplicationContext.refresh. 557|Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'myWebHandler' defined in class path resource [cn/ishow/gateway/configuration/FilterAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.ishow.gateway.core.filter.FilteringWebHandlerAdapter]: Factory method 'webHandler' threw exception; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.ishow.gateway.filter.LoggerFilter' available
+ERROR|2019-12-19 17:04:31.354|[main]|o.s.b.d.LoggingFailureAnalysisReporter.report.  42|
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Method webHandler in cn.ishow.gateway.configuration.FilterAutoConfiguration required a bean of type 'cn.ishow.gateway.filter.LoggerFilter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'cn.ishow.gateway.filter.LoggerFilter' in your configuration.
+

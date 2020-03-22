@@ -1,0 +1,3 @@
+org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.jdbc.initialize.DefaultPropertiesInitialize
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.ishow.jdbc.configuration.DruidConfiguration,\
+  cn.ishow.jdbc.configuration.MybatisPlusConfig

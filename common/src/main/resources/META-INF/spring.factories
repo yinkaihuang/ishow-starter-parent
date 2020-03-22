@@ -1,0 +1,3 @@
+org.springframework.context.ApplicationListener=cn.ishow.common.ready.SpringBootReady
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.ishow.common.util.BeanFactoryUtils
+org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.common.util.EnvironmentUtils

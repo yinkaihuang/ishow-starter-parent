@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.ishow.web.configuration.BaseWebMvcConfigurationSupport,\
+  cn.ishow.web.handler.GlobalExceptionHandler,\
+  cn.ishow.web.advice.ResponseAdvice
+org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.web.initialize.DefaultEnvPropertiesInitialize
