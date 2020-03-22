@@ -33,7 +33,7 @@ public class ASMUtils {
      * 使用ASM进行方法注入
      *
      * @param fullName
-     * @param injectMethodName
+     * @param injectMethodNames
      * @param methodAccept
      * @return
      * @throws Exception

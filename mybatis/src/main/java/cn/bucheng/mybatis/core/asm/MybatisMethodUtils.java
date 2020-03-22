@@ -17,9 +17,7 @@ package cn.bucheng.mybatis.core.asm;
  */
 
 import cn.bucheng.mybatis.core.accept.MethodAccept;
-import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
 
 import java.util.HashSet;
 import java.util.Set;
