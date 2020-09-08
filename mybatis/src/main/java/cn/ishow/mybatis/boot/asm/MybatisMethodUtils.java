@@ -1,4 +1,4 @@
-package cn.bucheng.mybatis.core.asm;
+package cn.ishow.mybatis.boot.asm;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -16,7 +16,7 @@ package cn.bucheng.mybatis.core.asm;
  * limitations under the License.
  */
 
-import cn.bucheng.mybatis.core.accept.MethodAccept;
+import cn.ishow.mybatis.boot.accept.MethodAccept;
 import org.objectweb.asm.MethodVisitor;
 
 import java.util.HashSet;
@@ -52,7 +52,7 @@ public class MybatisMethodUtils {
                                         return;
                                     }
                                     methodVisitor.visitVarInsn(ALOAD, 2);
-                                    methodVisitor.visitMethodInsn(INVOKESTATIC, "cn/bucheng/mybatis/core/handle/DefaultRecordLimitHandler", "handleRecord", "(Lorg/apache/ibatis/executor/result/DefaultResultContext;)V", false);
+                                    methodVisitor.visitMethodInsn(INVOKESTATIC, "cn/ishow/mybatis/boot/handle/DefaultRecordLimitHandler", "handleRecord", "(Lorg/apache/ibatis/executor/result/DefaultResultContext;)V", false);
                                     super.visitCode();
                                 }
                             };
@@ -81,7 +81,7 @@ public class MybatisMethodUtils {
                             @Override
                             public void visitCode() {
                                 methodVisitor.visitVarInsn(ALOAD, 1);
-                                methodVisitor.visitMethodInsn(INVOKESTATIC, "cn/bucheng/mybatis/core/handle/PrepareStatementUtils", "setFlow", "(Ljava/sql/Statement;)V", false);
+                                methodVisitor.visitMethodInsn(INVOKESTATIC, "cn/ishow/mybatis/boot/handle/PrepareStatementUtils", "setFlow", "(Ljava/sql/Statement;)V", false);
                                 super.visitCode();
                             }
                         };
@@ -90,7 +90,7 @@ public class MybatisMethodUtils {
                             @Override
                             public void visitCode() {
                                 methodVisitor.visitVarInsn(ALOAD, 1);
-                                methodVisitor.visitMethodInsn(INVOKESTATIC, "cn/bucheng/mybatis/core/handle/PrepareStatementUtils", "setFlow", "(Ljava/sql/Statement;)V", false);
+                                methodVisitor.visitMethodInsn(INVOKESTATIC, "cn/ishow/mybatis/boot/handle/PrepareStatementUtils", "setFlow", "(Ljava/sql/Statement;)V", false);
                                 super.visitCode();
                             }
                         };

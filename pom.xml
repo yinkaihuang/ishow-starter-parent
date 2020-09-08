@@ -16,9 +16,9 @@
         <module>littleProxy</module>
         <module>apollo</module>
         <module>cat</module>
-        <module>gateway</module>
         <module>mybatis</module>
         <module>rocketmq</module>
+        <module>tkMybatis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
