@@ -23,6 +23,13 @@
             <groupId>cn.bucheng</groupId>
             <artifactId>ishow-starter-common</artifactId>
         </dependency>
+
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
     </dependencies>
 
 </project>

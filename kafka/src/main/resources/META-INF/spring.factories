@@ -1,1 +1,1 @@
-org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.kafka.init.DefaultPropertiesInitialize
+org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.kafka.init.KafkaDefaultPropertiesInject

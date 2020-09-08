@@ -25,7 +25,6 @@ import org.springframework.core.annotation.Order;
  * @create 2019/11/11 18:29
  * @description
  */
-@Order(Integer.MAX_VALUE)
 public class SpringBootReady implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
     private static volatile boolean ready = false;
 

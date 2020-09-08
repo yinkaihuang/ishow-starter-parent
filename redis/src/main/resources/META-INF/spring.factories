@@ -1,1 +1,4 @@
-org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.redis.DefaultPropertiesInitialize
+org.springframework.boot.env.EnvironmentPostProcessor=cn.ishow.redis.RedisDefaultPropertiesInject
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.ishow.redis.configuration.RedisSubListenerConfig,\
+  cn.ishow.redis.mq.RedisMQProducer,\
+  cn.ishow.redis.mq.RedisReceiver
