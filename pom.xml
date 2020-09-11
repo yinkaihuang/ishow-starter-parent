@@ -19,6 +19,7 @@
         <module>mybatis</module>
         <module>rocketmq</module>
         <module>tkMybatis</module>
+        <module>boot-valid</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
