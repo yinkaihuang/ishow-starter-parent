@@ -21,6 +21,8 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 
+import java.util.Map;
+
 /**
  * @author yinchong
  * @create 2019/11/23 21:50
@@ -40,5 +42,10 @@ public class BeanFactoryUtils implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         BeanFactoryUtils.beanFactory = (DefaultListableBeanFactory) beanFactory;
+    }
+
+
+    public static Map<String,Object>  listBeanWithAnnotation(Class annotation){
+        return beanFactory.getBeansWithAnnotation(annotation);
     }
 }
