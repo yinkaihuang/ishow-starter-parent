@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration status="WARN" monitorInterval="600">
+<configuration status="WARN" monitorInterval="600" packages="cn.ishow.log">
 
     <Properties>
         <!--自定义日志文件名前缀，建议使用模块/项目名称，具体的日志级别在Appenders里面配置-->
         <Property name="LOG_NAME_PREFIX">app-</Property>
         <!--自定义日志输出格式%-5p|%-d{yyyy-MM-dd HH:mm:ss.SSS}|%C.%M.%3L|%X{intellif_log_id}%m%n  -->
-        <Property name="patternStyle">%p|%-d{yyyy-MM-dd HH:mm:ss.SSS}|[%t]|%C{1.}.%M.%4L|%m%n</Property>
+        <Property name="patternStyle">%cl %p|%-d{yyyy-MM-dd HH:mm:ss.SSS}|[%t]|%C{1.}.%M.%4L|%m%n</Property>
         <!--自定义日志存放路径，这为项目根路径-->
         <Property name="LOG_HOME">./logs</Property>
         <!--自定义日志文件生成策略,每月/每天/每小时生成新的日志文件-->

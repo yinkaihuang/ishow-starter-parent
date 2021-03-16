@@ -17,6 +17,7 @@ package cn.ishow.test.web;
  */
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -27,8 +28,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 //@EnableApolloConfig
 @SpringBootApplication
+@Slf4j
 public class HelloWebApplication {
     public static  void main(String[] args) {
         SpringApplication.run(HelloWebApplication.class, args);
+        log.info("{}","i am man");
     }
 }
